@@ -2,7 +2,7 @@ import random
 
 print(
     "Welcome to Snake Water Gun game\n"
-    "Chicess:\n"
+    "Chices:\n"
     "s for Snake\n"
     "w for Water\n"
     "g for Gun\n"
@@ -20,6 +20,7 @@ while user_score < 3 and comps_score < 3:
     g = 2
     choice_map = {"S": s, "W": w, "G": g}
     result_text = {"W": "You Win!", "L": "You Lose!", "D": "Game Drawn!"}
+    display_choice = ["Snake", "Water", "Gun"]
 
     comps_choice = random.randint(0, 2)
     user_choice = input("Enter your choice: ").upper()
@@ -44,7 +45,9 @@ while user_score < 3 and comps_score < 3:
             user_score -= 1
         comps_score += 1
 
-    print(f"Your score: {user_score}\nComputers score: {comps_score}")
+    print(
+        f"Your choice: {display_choice[player_index]}\nComputers choice: {display_choice[comps_choice]}\nYour score: {user_score}\nComputers score: {comps_score}\n_________________________________"
+    )
 
 
 if user_score == 3:
